@@ -35,7 +35,7 @@ COPY --from=builder /app/build /usr/share/nginx/html
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Create a new user with UID 10014
-RUN addgroup -g 10014 choreo && \
+RUN addgroup --gid 10014 choreo && \
     adduser  --disabled-password  --no-create-home --uid 10014 --ingroup choreo choreouser
 # Set a non-root user
 USER 10014
