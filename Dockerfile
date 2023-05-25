@@ -39,3 +39,5 @@ RUN addgroup --gid 10014 choreo && \
     adduser  --disabled-password  --no-create-home --uid 10014 --ingroup choreo choreouser
 # Set a non-root user
 USER 10014
+
+CMD [ "nginx", "-g", "daemon off;" ]
